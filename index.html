@@ -1,0 +1,797 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+          visibility: hidden;
+          background: #121212;
+        }
+    </style>
+    <link rel="stylesheet" href="site.css" onload="document.body.style.visibility='visible'">
+    <link rel="icon" href="images/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="toggle-label">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                    <div class="toggle-ball"></div>
+                </label>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="dark-overlay" class="dark-overlay"></div>
+
+    <div class="background-effect">
+        <div class="code-column left">
+            <div class="code-content">
+                <pre><code class="language-js">
+function calculateFactorial(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * calculateFactorial(n - 1);
+    }
+}
+
+const result = calculateFactorial(5);
+console.log("Factorial:", result);
+
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function(number) {
+    console.log("Number:", number);
+                </code></pre>
+                <!-- Duplicate content for seamless scrolling -->
+                <pre><code class="language-js">
+function calculateFactorial(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * calculateFactorial(n - 1);
+    }
+}
+
+const result = calculateFactorial(5);
+console.log("Factorial:", result);
+
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function(number) {
+    console.log("Number:", number);
+                </code></pre>
+            </div>
+        </div>
+        <div class="code-column middle">
+            <div class="code-content">
+                <pre><code class="language-js">
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log("Hello, my name is " + this.name);
+    }
+}
+
+const john = new Person("John", 30);
+john.greet();
+
+async function fetchData(url) {
+    const response = await fetch(url);
+    return await response.json();
+                </code></pre>
+                <pre><code class="language-js">
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log("Hello, my name is " + this.name);
+    }
+}
+
+const john = new Person("John", 30);
+john.greet();
+
+async function fetchData(url) {
+    const response = await fetch(url);
+    return await response.json();
+                </code></pre>
+            </div>
+        </div>
+        <div class="code-column right">
+            <div class="code-content">
+                <pre><code class="language-js">
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+
+module.exports = app;
+                </code></pre>
+                <pre><code class="language-js">
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+
+module.exports = app;
+                </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <header id="home" class="hero-section">
+            <!-- SVG for the Draw-In h1 -->
+            <svg
+                id="drawn-text"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 800 100"
+                class="drawn-text"
+            >
+                <defs>
+                    <mask id="text-mask">
+                        <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+                        <rect
+                            x="0"
+                            y="0"
+                            width="100%"
+                            height="100%"
+                            fill="black"
+                            class="mask-rect"
+                        />
+                    </mask>
+                </defs>
+                <text
+                    x="50%"
+                    y="50%"
+                    dominant-baseline="middle"
+                    text-anchor="middle"
+                    class="text-path"
+                    mask="url(#text-mask)"
+                >Hi, I'm Josh</text>
+            </svg>
+    
+            <p>
+                I am a Computer Science Undergraduate, looking to build things and collaborate with others in all fields. Experienced in many areas, including 
+                <strong class="highlight">Full-Stack Development</strong>, and
+                <strong class="highlight">AI Development</strong>.
+            </p>
+            <div class="scroll-container">
+                <a href="#about" class="scroll-button">Learn More</a>
+                <a href="#projects" class="scroll-button">See My Projects</a>
+            </div>
+        </header>
+        
+        <!-- Three Column Layout -->
+        <div class="three-column-container" id="about">
+            <div class="left-column">
+                <div class="authors-box">
+                    <h3>Bio</h3>
+                    <div class="authors-list">
+                        <div class="author-card">
+                            <img src="images/portait.png" alt="Joshua Peeples" class="author-photo">
+                            <div class="author-info">
+                                <h4>Joshua Peeples</h4>
+                                <p>Full Stack Developer & AI Developer</p>
+                            </div>
+                            <div class="author-links">
+                                <a href="https://www.linkedin.com/in/joshua-peeples/" target="_blank" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/joshua-peeples/" target="_blank" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="mailto:joshcullor1@gmail.com" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="middle-column">
+                <div class="about-me-section">
+                    <h3>About Me</h3>
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <i class="fas fa-laptop-code about-icon"></i>
+                            <h4>Experienced Developer</h4>
+                            <p>Over 5 years of experience in programming, game development, and full-stack software development.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-project-diagram about-icon"></i>
+                            <h4>Project Management</h4>
+                            <p>Proficient in managing complex source code, documentation, and collaborative development using GitHub.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-cogs about-icon"></i>
+                            <h4>SDLC Expertise</h4>
+                            <p>Experienced in the Software Development Life Cycle, including design, implementation, testing, and deployment.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-rocket about-icon"></i>
+                            <h4>Agile Methodologies</h4>
+                            <p>Skilled in Agile development methodologies, contributing to iterative and collaborative workflows.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-brain about-icon"></i>
+                            <h4>AI Enthusiast</h4>
+                            <p>Passionate about artificial intelligence, machine learning, and natural language processing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <div class="documents-container">
+                    <div class="document-card">
+                        <i class="fas fa-file-alt document-icon"></i>
+                        <a href="documents/Joshua Peeples - Resume - 2025.pdf" target="_blank" class="document-button" aria-label="Download Resume">
+                            <i class="fas fa-paperclip"></i> View Resume
+                        </a>
+                    </div>
+                </div>
+
+                <div class="education-box">
+                    <h3>Education</h3>
+                    <div class="education-content">
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p class="university">
+                            <span class="university-name">Kennesaw State University</span>, 
+                            <span class="university-address">1000 Chastain Rd NW, Kennesaw, GA 30144</span>
+                        </p>
+                        <p class="graduation-date">Graduation: 2025</p>
+                        <p class="concentration">Concentration: Artificial Intelligence</p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-container" id="projects">
+            <h3>Projects</h3>
+            <div class="projects-content">
+
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <!-- Static -->
+                        <img src="images/chess_static.jpg" alt="ChessAI Web Application Screenshot" class="project-image static-image">
+                        <!-- GIF -->
+                        <img src="images/Chess_gif.gif" alt="ChessAI Web Application Animation" class="project-image gif-image">
+                    </div>
+                    <h4>ChessAI Web Application</h4>
+                    <p>
+                        A full-stack web application for playing chess with AI opponents or other players online.
+                    </p>
+                    <div class="project-icons">
+                        <div class="icon-card">
+                            <img src="images/logos/html-1.svg" alt="HTML5 Logo" class="project-logo">
+                            <span class="icon-name">HTML5</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/css-3.svg" alt="CSS3 Logo" class="project-logo">
+                            <span class="icon-name">CSS3</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/logo-javascript.svg" alt="JavaScript Logo" class="project-logo">
+                            <span class="icon-name">JavaScript</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/c--4.svg" alt="C# Logo" class="project-logo">
+                            <span class="icon-name">C#</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/dotnet-ar21.svg" alt="ASP.NET Core MVC Logo" class="project-logo">
+                            <span class="icon-name">ASP.NET</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/10052-icon-service-SignalR.svg" alt="SignalR Logo" class="project-logo">
+                            <span class="icon-name">SignalR</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Korecct/Senior-Project-ChessAI" target="_blank" class="project-button github-button" aria-label="View ChessAI on GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" data-video="videos/chessai-demo.mp4" class="project-button demo-button" aria-label="View ChessAI Demo">
+                            <i class="fas fa-play"></i> Demo Video
+                        </a>
+                    </div>
+                </div>                    
+
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/chatbot-preview.png" alt="MBTI Personality Type Chatbot Screenshot" class="project-image">
+                        <!-- GIF -->
+                        <img src="images/mbti-chatbot.gif" alt="MBTI Personality Type Chatbot Animation" class="project-image gif-image">
+                    </div>
+                    <h4>MBTI Personality Type Chatbot</h4>
+                    <p>
+                        A chatbot that predicts users' MBTI personality types based on their text inputs.
+                    </p>
+                    <div class="project-icons">
+                        <div class="icon-card">
+                            <img src="images/logos/python-5.svg" alt="Python Logo" class="project-logo">
+                            <span class="icon-name">Python</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/pytorch-2.svg" alt="PyTorch Logo" class="project-logo">
+                            <span class="icon-name">PyTorch</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/Flask.svg" alt="Flask Logo" class="project-logo">
+                            <span class="icon-name">Flask</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/scikit-learn.svg" alt="Scikit-learn Logo" class="project-logo">
+                            <span class="icon-name">Scikit-learn</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/Matplotlib.svg" alt="Matplotlib Logo" class="project-logo">
+                            <span class="icon-name">Matplotlib</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/logo-mark-lightbg-seaborn.svg" alt="Seaborn Logo" class="project-logo">
+                            <span class="icon-name">Seaborn</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/Pandas.svg" alt="Pandas" class="project-logo">
+                            <span class="icon-name">Pandas</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Korecct/MBTI-Personality-Chatbot" target="_blank" class="project-button github-button" aria-label="View MBTI Chatbot on GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/metal_defect_static.png" alt="Metal Defect Detection AI Screenshot" class="project-image ">
+                    </div>
+                    <h4>Metal Defect Detection AI</h4>
+                    <p>
+                        A deep learning model to detect metal surface defects live or in batches using image classification techniques.
+                    </p>
+                    <div class="project-icons">
+                        <div class="icon-card">
+                            <img src="images/logos/python-5.svg" alt="Python Logo" class="project-logo">
+                            <span class="icon-name">Python</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/pytorch-2.svg" alt="PyTorch Logo" class="project-logo">
+                            <span class="icon-name">PyTorch</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/opencv-icon.svg" alt="OpenCV Logo" class="project-logo">
+                            <span class="icon-name">OpenCV</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/scikit-learn.svg" alt="Scikit-learn Logo" class="project-logo">
+                            <span class="icon-name">Scikit-learn</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/Matplotlib.svg" alt="Matplotlib Logo" class="project-logo">
+                            <span class="icon-name">Matplotlib</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/numpy-1.svg" alt="Numpy Logo" class="project-logo">
+                            <span class="icon-name">Numpy</span>
+                        </div>
+                        <div class="icon-card">
+                            <img src="images/logos/logo-mark-lightbg-seaborn.svg" alt="Seaborn" class="project-logo">
+                            <span class="icon-name">Seaborn</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Korecct/Metal-Defect-Detection" target="_blank" class="project-button github-button" aria-label="View Metal Defect Detection AI on GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <div class="skills-box" id="skills">
+            <h3>Skills</h3>
+
+            <!-- Programming Languages -->
+            <div class="skills-category">
+                <h4>Programming Languages</h4>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <img src="images/logos/java-4.svg" alt="Java Logo" class="skill-logo">
+                        <span class="skill-name">Java</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/c--4.svg" alt="C# Logo" class="skill-logo">
+                        <span class="skill-name">C#</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/python-5.svg" alt="Python Logo" class="skill-logo">
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/rust.svg" alt="Rust Logo" class="skill-logo">
+                        <span class="skill-name">Rust</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/logo-javascript.svg" alt="JavaScript Logo" class="skill-logo">
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/html-1.svg" alt="HTML5 Logo" class="skill-logo">
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/css-3.svg" alt="CSS3 Logo" class="skill-logo">
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/ada_logo.svg" alt="Ada Logo" class="skill-logo">
+                        <span class="skill-name">Ada</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="skills-category">
+                <h4>Technologies</h4>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <img src="images/logos/pytorch-2.svg" alt="PyTorch Logo" class="skill-logo">
+                        <span class="skill-name">PyTorch</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/tensorflow-2.svg" alt="TensorFlow Logo" class="skill-logo">
+                        <span class="skill-name">TensorFlow</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/opencv-icon.svg" alt="OpenCV Logo" class="skill-logo">
+                        <span class="skill-name">OpenCV</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/huggingface-2.svg" alt="Hugging Face Transformers Logo" class="skill-logo">
+                        <span class="skill-name">Hugging Face</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/dotnet-ar21.svg" alt="ASP.NET Core MVC Logo" class="skill-logo">
+                        <span class="skill-name">ASP.NET Core MVC</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/10052-icon-service-SignalR.svg" alt="SignalR Logo" class="skill-logo">
+                        <span class="skill-name">SignalR</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/unity-69.svg" alt="Unity Logo" class="skill-logo">
+                        <span class="skill-name">Unity</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/Flask.svg" alt="Flask" class="skill-logo">
+                        <span class="skill-name">Flask</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/cloudflare-icon.svg" alt="Cloudflare" class="skill-logo">
+                        <span class="skill-name">Cloudflare</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/scikit-learn.svg" alt="Scikit-learn" class="skill-logo">
+                        <span class="skill-name">Scikit-learn</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/Matplotlib.svg" alt="Matplotlib" class="skill-logo">
+                        <span class="skill-name">Matplotlib</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/numpy-1.svg" alt="Numpy" class="skill-logo">
+                        <span class="skill-name">Numpy</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/logo-mark-lightbg-seaborn.svg" alt="Seaborn" class="skill-logo">
+                        <span class="skill-name">Seaborn</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/Pandas.svg" alt="Pandas" class="skill-logo">
+                        <span class="skill-name">Pandas</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/logos/docker-svg.svg" alt="Docker" class="skill-logo">
+                        <span class="skill-name">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-container" id="contact">
+            <h3>Contact Me</h3>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSubmission()"></iframe>
+
+            <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSe5LxQZDN3ULmWWWG1MU3mCRA7ef-oHXq6Oja7xPTBlKcDj6g/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <input type="text" name="entry.711190606" placeholder="Your Name" required>
+                <input type="email" name="entry.1035089498" placeholder="Your Email" required>
+                <select name="entry.1593354920" required>
+                    <option value="" disabled selected>Reason for Contacting</option>
+                    <option value="Job Opportunity">Job Opportunity</option>
+                    <option value="Portfolio Inquiry">Portfolio Inquiry</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" name="entry.1537348228" placeholder="Subject">
+                <textarea name="entry.672148087" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+
+            <div id="confirmation-message" class="confirmation-message">
+                <h4>Thank You!</h4>
+                <p>Your message has been successfully sent. I'll get back to you soon.</p>
+                <button id="send-another" class="send-another-button">Send Another Message</button>
+            </div>
+
+            <p>Or reach me via email:</p>
+            <a href="mailto:joshcullor1@gmail.com" class="email-button">
+                <i class="fas fa-envelope"></i> joshcullor1@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-button">&times;</span>
+            <video id="demo-video" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://github.com/Korecct/" target="_blank" aria-label="GitHub" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/joshua-peeples/" target="_blank" aria-label="LinkedIn" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#skills" class="footer-link">Skills</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            
+            <p class="footer-text">&copy; <span id="spanYear"></span> Made by Joshua Peeples</p>
+        </div>
+    </footer>
+
+    <!-- Syntax Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Automatic language detection-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const overlay = document.getElementById('dark-overlay');
+
+        toggle.addEventListener('change', function() {
+            if(this.checked) {
+                overlay.style.display = 'block';
+            } else {
+                overlay.style.display = 'none';
+            }
+        });
+
+        document.getElementById('spanYear').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('#home, #about, #projects, #skills, #contact');
+            const navLinks = document.querySelectorAll('.nav-link');
+        
+            function removeActiveClasses() {
+                navLinks.forEach(link => link.classList.remove('active'));
+            }
+        
+            function addActiveClass(link) {
+                link.classList.add('active');
+            }
+        
+            // Intersection Observer to detect current section in view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6 // 60% of the section should be visible
+            };
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.getAttribute('id');
+                        removeActiveClasses();
+                        const activeLink = document.querySelector(`.navbar ul li a[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            addActiveClass(activeLink);
+                        }
+                    }
+                });
+            }, observerOptions);
+        
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }); 
+        
+        // Contact Form Confirmation
+        let submitted = false;
+
+        function handleFormSubmission() {
+            if (submitted) {
+                submitted = false;
+                // Hide the form with animation
+                const form = document.getElementById('contact-form');
+                form.classList.add('fade-out');
+
+                // After animation, hide the form and show confirmation
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    const confirmation = document.getElementById('confirmation-message');
+                    confirmation.classList.add('fade-in');
+                    confirmation.style.display = 'flex';
+                }, 500);
+            }
+        }
+
+        // Handle "Send Another Message" button
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendAnotherButton = document.getElementById('send-another');
+            sendAnotherButton.addEventListener('click', function() {
+                // Hide confirmation message with animation
+                const confirmation = document.getElementById('confirmation-message');
+                confirmation.classList.remove('fade-in');
+                confirmation.classList.add('fade-out');
+
+                // After animation, hide confirmation and show form
+                setTimeout(() => {
+                    confirmation.style.display = 'none';
+                    confirmation.classList.remove('fade-out');
+                    const form = document.getElementById('contact-form');
+                    form.style.display = 'flex';
+                    form.classList.remove('fade-out');
+                }, 500);
+            });
+        });
+
+        // Video Modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the modal elements
+            const modal = document.getElementById('video-modal');
+            const modalVideo = document.getElementById('demo-video');
+            const closeButton = document.querySelector('.close-button');
+    
+            // Function to open the modal
+            function openModal(videoSrc) {
+                modal.style.display = 'flex';
+                modalVideo.querySelector('source').src = videoSrc;
+                modalVideo.load();
+                modalVideo.play();
+                // Prevent body from scrolling when modal is open
+                document.body.style.overflow = 'hidden';
+            }
+    
+            // Function to close the modal
+            function closeModal() {
+                modal.style.display = 'none';
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+                modalVideo.querySelector('source').src = '';
+                modalVideo.load();
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+            }
+    
+            // Event listener for Demo buttons
+            const demoButtons = document.querySelectorAll('.demo-button');
+            demoButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const videoSrc = this.getAttribute('data-video');
+                    if (videoSrc) {
+                        openModal(videoSrc);
+                    } else {
+                        alert('Demo video not available.');
+                    }
+                });
+            });
+    
+            // Event listener for close button
+            closeButton.addEventListener('click', function() {
+                closeModal();
+            });
+    
+            // Close modal when clicking outside the video content
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'flex') {
+                    closeModal();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeSection = document.getElementById('home');
+            const codeContents = document.querySelectorAll('.background-effect .code-content');
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0
+            };
+
+            // Callback for Intersection Observer
+            const callback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        // Home section is not in view - pause animations
+                        codeContents.forEach(content => {
+                            content.style.animationPlayState = 'paused';
+                        });
+                    } else {
+                        // Home section is in view - resume animations
+                        codeContents.forEach(content => {
+                            content.style.animationPlayState = 'running';
+                        });
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(callback, options);
+
+            observer.observe(homeSection);
+        });
+    </script>
+</body>
+</html>
